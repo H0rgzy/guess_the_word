@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Sign In</h1>
+
+<form action="{{ url_for('signIn') }}" method="POST">
+    {{ signIn.hidden_tag() }}
+    {{ signIn.name.label }}
+    {{ signIn.name() }}
+    {{ signIn.email.label }}
+    {{ signIn.email() }}
+    {{ signIn.submit() }}
+
+
+</form>
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class="flashes">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+{% endwith %}
+
+{% endblock %}

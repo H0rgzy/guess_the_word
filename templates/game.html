@@ -1,0 +1,16 @@
+{% extends"base.html" %}
+{% block content %}
+
+<h1>{{ category }}</h1>
+<h2>{{ hidden_word }}</h2>
+<p>Lives remaining: {{ lives }}</p>
+<p>Incorrect letters: {{ incorrect_letters }}</p>
+
+<form action="{{ url_for('game') }}" method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.letter.label }}
+    {{ form.letter() }}
+    {{ form.submit() }}
+</form>
+
+{% endblock %}

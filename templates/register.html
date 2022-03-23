@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Registration</h1>
+
+<form action="{{ url_for('register') }}" method="POST">
+    {{ register.hidden_tag() }}
+    {{ register.name.label }}
+    {{ register.name() }}
+    {{ register.email.label }}
+    {{ register.email() }}
+    {{ register.submit() }}
+
+</form>
+
+
+
+
+
+{% endblock %}

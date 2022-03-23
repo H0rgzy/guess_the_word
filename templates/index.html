@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content%}
+    <h1>Welcome to my Guess a Word game</h1>
+
+    <p>Would you like to sign in or register?</p>
+
+    <form action="register" method="GET">
+        <input type="submit" value="Register">
+    </form>
+    <form action="signIn" method="GET">
+        <input type="submit" value="Sign In">
+        
+    </form>   
+    <form action="userChecks" method="GET">
+        <input type="submit" value="Check users">
+
+    </form> 
+    
+{% endblock %}
+
+
+
+
+
+
+

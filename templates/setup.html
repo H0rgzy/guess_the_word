@@ -1,0 +1,18 @@
+{% extends"base.html" %}
+{% block content %}
+
+<h1>Welcome {{ name }}</h1>
+<h3>Which category would you like to choose?</h3>
+
+<form action="{{ url_for('setup') }}" method="POST">
+    {{ choice.hidden_tag() }}
+    {{ choice.nhl() }}
+    {{ choice.countries() }}
+    {{ choice.animals() }}
+</form>
+
+
+
+
+
+{% endblock %}
