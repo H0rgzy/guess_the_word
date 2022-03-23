@@ -39,12 +39,12 @@ def signIn():
                 id = id
                 name = username
                 choice = CategoryForm()
-        return render_template("setup.html", name=name, id=id, choice=choice)
+        return render_template("players.html", name=name, id=id, choice=choice)
     return render_template("signIn.html", signIn=signIn)
 
 # Sets up the game variables
 
-@app.route('/setup', methods=["GET", "POST"])
+@app.route('/players', methods=["GET", "POST"])
 def players():
     choice = CategoryForm()
     if choice.validate_on_submit():
@@ -73,7 +73,7 @@ def players():
         incorrect_letters = []
         form = ChooseLetter()
         return render_template("game.html", category=name, form=form, lst=lst, word=word, hidden_word=hidden_word, lives=lives, incorrect_letters=incorrect_letters)
-    return render_template("setup.html", choice=choice)
+    return render_template("players.html", choice=choice)
 
 # Game code
 
@@ -116,9 +116,5 @@ def game():
     return render_template('game.html', form=form, word=word, hidden_word=hidden_word, lives=lives, category=name, incorrect_letters=incorrect_letters)
 
 
-@app.route('/userChecks')
-def userChecks():
 
-    
-    return render_template("userChecks.html", usernames=usernames, emails = emails )
 
