@@ -4,9 +4,20 @@ from wtforms import StringField, SubmitField
 from helper import usernames, emails, nhl_teams, countries, animals
 from forms import Form, CategoryForm, ChooseLetter
 import random
+from database import app, db
+from models import Teams, Countries, Animals
 
-app = Flask(__name__)
-app.config['SECRET_KEY'] = 'A_Top_Secret_Key_For_Me'
+
+
+
+# for item in nhl_teams:
+#     new = Teams(team=item)
+#     db.session.add(new)
+#     db.session.commit()
+
+new = Teams.query.get(32).team
+print(new)
+
 
 lives = 5
 
